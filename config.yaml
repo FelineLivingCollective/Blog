@@ -1,0 +1,14 @@
+baseURL: "https://felineliving.netlify.app/"
+languageCode: "en-us"
+title: "Feline Living Collective | Architecture, Wellness & Pet Design"
+
+params:
+  description: "Luxury interior design meets cat-friendly living. Explore 2026 trends in architecture, sustainable materials, and home wellness for the design-conscious pet owner."
+  author: "Feline Living Collective"
+  pinterest_verify: "f2056a50bef97277f706a34b8c3a7f66"
+  ga4: "G-XXXXXXXXXX"  # PLACEHOLDER - Substituir após deploy
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true  # Permite HTML em Markdown
