@@ -1,0 +1,18 @@
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" -}}
+{{- $image := resources.Get (printf "images/%s" $src) -}}
+
+{{- if $image -}}
+{{- $webp := $image.Resize "800x webp" -}}
+{{- $jpeg := $image.Resize "800x jpg" -}}
+
+<picture>
+    <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
+    <source srcset="{{ $jpeg.RelPermalink }}" type="image/jpeg">
+    <img src="{{ $jpeg.RelPermalink }}" alt="{{ $alt }}" loading="lazy"
+        style="max-width: 100%; height: auto; border-radius: var(--border-radius);">
+</picture>
+{{- else -}}
+<img src="/images/{{ $src }}" alt="{{ $alt }}" loading="lazy"
+    style="max-width: 100%; height: auto; border-radius: var(--border-radius);">
+{{- end -}}

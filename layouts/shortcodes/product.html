@@ -1,0 +1,25 @@
+{{- $link := .Get "link" -}}
+{{- $img := .Get "img" -}}
+{{- $name := .Get "name" -}}
+{{- $price := .Get "price" -}}
+
+<div class="product-card"
+    style="display: flex; gap: 1.5rem; background: var(--background); border: 2px solid var(--neutral); border-radius: var(--border-radius); padding: 1.5rem; margin: 2rem 0; align-items: center;">
+    <div class="product-image" style="flex-shrink: 0;">
+        <img src="/images/{{ $img }}" alt="{{ $name }}"
+            style="width: 150px; height: 150px; object-fit: cover; border-radius: var(--border-radius);">
+    </div>
+
+    <div class="product-info" style="flex: 1;">
+        <h4 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">{{ $name }}</h4>
+        <p class="product-price" style="font-size: 1.5rem; font-weight: 700; color: var(--primary); margin: 0.5rem 0;">
+            {{ $price }}</p>
+        <a href="{{ $link }}" target="_blank" rel="noopener noreferrer nofollow"
+            style="display: inline-block; background: var(--primary); color: white; padding: 0.75rem 1.5rem; border-radius: var(--border-radius); text-decoration: none; font-weight: 700; margin-top: 1rem;">
+            Shop on Amazon →
+        </a>
+        <p style="font-size: 0.75rem; color: var(--neutral); margin-top: 0.5rem;">
+            <em>As an Amazon Associate, we earn from qualifying purchases.</em>
+        </p>
+    </div>
+</div>
