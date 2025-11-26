@@ -1,9 +1,14 @@
 <header class="site-header">
     <div class="container header-inner">
-        <a href="/" class="site-title">{{ .Site.Title }}</a>
+        <a href="/" class="site-branding">
+            <div class="site-logo">
+                {{ readFile "assets/vector/cat-logo.svg" | safeHTML }}
+            </div>
+            <span class="site-title">{{ .Site.Title }}</span>
+        </a>
 
         <nav class="site-nav">
-            <!-- Placeholder for future menu items if needed -->
+            <!-- Placeholder for future menu items -->
         </nav>
 
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
