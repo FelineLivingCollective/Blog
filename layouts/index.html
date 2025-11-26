@@ -1,23 +1,40 @@
 {{ define "main" }}
 <div class="home">
     <section class="intro" style="margin-bottom: 3rem;">
+        <h2>Luxury Interior Design Meets Cat-Friendly Living</h2>
+        <p>{{ .Site.Params.description }}</p>
+    </section>
 
-        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-
-        <time datetime="{{ .Date.Format " 2006-01-02" }}" style="color: var(--neutral); font-size: 0.9rem;">
-            {{ .Date.Format "January 2, 2006" }}
-        </time>
-
-        <p style="margin-top: 0.5rem;">
-            {{ if .Description }}
-            {{ .Description }}
-            {{ else }}
-            {{ .Summary }}
+    <section class="posts-grid">
+        {{ range .Site.RegularPages }}
+        <article class="post-card reveal"
+            style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border);">
+            {{ if .Params.image }}
+            <a href="{{ .Permalink }}">
+                {{/* Use the new smart img shortcode logic manually here or just standard img tag since it's a template
+                */}}
+                {{/* For simplicity and robustness with remote URLs, we use a direct img tag here */}}
+                <img src="{{ .Params.image }}" alt="{{ .Title }}"
+                    style="width: 100%; max-width: 100%; height: auto; border-radius: var(--border-radius); margin-bottom: 1rem;">
+            </a>
             {{ end }}
-        </p>
 
-        <a href="{{ .Permalink }}" style="display: inline-block; margin-top: 0.5rem; font-weight: 700;">Read More
-            →</a>
+            <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+
+            <time datetime="{{ .Date.Format " 2006-01-02" }}" style="color: var(--text-light); font-size: 0.9rem;">
+                {{ .Date.Format "January 2, 2006" }}
+            </time>
+
+            <p style="margin-top: 0.5rem;">
+                {{ if .Description }}
+                {{ .Description }}
+                {{ else }}
+                {{ .Summary }}
+                {{ end }}
+            </p>
+
+            <a href="{{ .Permalink }}" style="display: inline-block; margin-top: 0.5rem; font-weight: 700;">Read More
+                →</a>
         </article>
         {{ end }}
     </section>
