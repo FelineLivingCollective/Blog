@@ -1,89 +1,65 @@
 /* ========================================
-   SPACING IMPROVEMENTS - OVERRIDE STYLES
+   SPACING IMPROVEMENTS - MOBILE OPTIMIZED
    Applied: 2025-11-26
    ======================================== */
 
-/* Updated Spacing Variables */
-:root {
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 1.5rem;
-    --spacing-lg: 2.5rem;
-    --spacing-xl: 4rem;
-    --spacing-2xl: 6rem;
+/* Desktop: Keep original spacing (no changes) */
 
-    /* Optimized content width for readability */
-    --content-width: 720px;
-}
-
-/* Header - Increased Padding */
-.site-header {
-    padding: 1.25rem 0 !important;
-}
-
-/* Blog Grid - Increased Gap */
-.posts-grid {
-    gap: 2.5rem !important;
-}
-
-/* Post Cards - Better Spacing */
-.post-card img {
-    margin-bottom: 1.5rem;
-}
-
-.post-card h2,
-.post-card h3 {
-    margin-bottom: 1rem;
-    line-height: 1.3;
-}
-
-/* Post Content - Better Readability */
-article p {
-    margin-bottom: 1.75rem;
-    line-height: 1.8;
-}
-
-article h2,
-article h3 {
-    margin-top: 3rem;
-    margin-bottom: 1.5rem;
-}
-
-/* Featured Image Breathing Room */
-.post-header img,
-article>img:first-of-type {
-    margin-top: 2rem;
-    margin-bottom: 3rem;
-}
-
-/* Footer - More Generous Spacing */
-.site-footer {
-    padding: 4.5rem 0 2.5rem !important;
-}
-
-.footer-grid {
-    gap: 3rem !important;
-}
-
-/* Social Links Spacing */
-.social-links a {
-    margin: 0 1rem;
-}
-
-/* Mobile Adjustments */
+/* Mobile Improvements Only */
 @media (max-width: 768px) {
+
+    /* Hero Section - Add top margin to separate from header */
+    .hero-section {
+        margin-top: 1.5rem !important;
+    }
+
+    /* Posts Grid - Better spacing on mobile */
     .posts-grid {
         gap: 1.5rem !important;
     }
 
+    /* Optimized Post Cards - Title + Date Only */
     .post-card {
-        padding: 1.5rem;
+        padding: 1.25rem !important;
     }
 
+    .post-card img {
+        margin-bottom: 1rem;
+        border-radius: 8px;
+    }
+
+    .post-card h2,
+    .post-card h3 {
+        font-size: 1rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 0.5rem !important;
+        font-weight: 600;
+    }
+
+    .post-card .post-meta {
+        font-size: 0.85rem !important;
+        color: var(--text-light);
+        margin-top: 0.5rem;
+    }
+
+    /* Hide excerpt on mobile for cleaner cards */
+    .post-card p {
+        display: none;
+    }
+
+    /* Post Content - Better readability */
     article p {
         margin-bottom: 1.5rem;
+        line-height: 1.75;
     }
 
+    article h2,
+    article h3 {
+        margin-top: 2.5rem;
+        margin-bottom: 1.25rem;
+    }
+
+    /* Footer - Comfortable spacing */
     .site-footer {
         padding: 3rem 0 2rem !important;
     }
