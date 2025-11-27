@@ -15,19 +15,19 @@
 /* CSS Variables - Design System */
 :root {
   /* Light Mode (Default) */
-  --primary: #B0655E;
-  /* Terracota */
-  --primary-hover: #8E4D47;
+  --primary: #8E4D47;
+  /* Terracota mais escuro para melhor contraste */
+  --primary-hover: #6D3A35;
   --neutral: #D1C5B3;
   /* Bege */
   --background: #F8F6F1;
   /* Creme */
   --surface: #FFFFFF;
   /* Branco para cards/elementos */
-  --text: #333333;
-  /* Carvão */
-  --text-light: #666666;
-  /* Texto secundário */
+  --text: #1a1a1a;
+  /* Quase preto para máximo contraste */
+  --text-light: #4a4a4a;
+  /* Cinza escuro para contraste adequado */
   --border: #E5E0D8;
 
   --header-bg: rgba(248, 246, 241, 0.85);

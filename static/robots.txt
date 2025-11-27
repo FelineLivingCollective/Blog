@@ -1,0 +1,7 @@
+# robots.txt for felinelivingcollective.site
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://felinelivingcollective.site/sitemap.xml

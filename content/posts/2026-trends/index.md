@@ -10,7 +10,7 @@ image: "/images/posts/1_PsUxP5XuA2GTZDRRbh5lmA.png"
 
 > *As we move toward 2026, the concept of “home” is shifting from a visual showcase to a sanctuary of healing. We analyzed global forecasting data to bring you the definitive guide to the “Year of Redirection.”*
 
-{{< img src="/images/posts/1_PsUxP5XuA2GTZDRRbh5lmA.png" alt="Resonant Home Decor Trends 2026" >}}
+{{< img-advanced src="images/1_PsUxP5XuA2GTZDRRbh5lmA.png" alt="Resonant Home Decor Trends 2026" >}}
 
 ### The Manifesto of Redirection
 
@@ -20,7 +20,7 @@ The consumer of 2026 is exhausted by digital saturation. In response, we are see
 
 ### 1. Grounded Vitality vs. Digital Optimism
 
-{{< img src="/images/posts/1_DNaiSWbZKtOl1ac-_zvpuw.png" alt="Grounded Vitality Living Room" >}}
+{{< img-advanced src="images/1_DNaiSWbZKtOl1ac-_zvpuw.png" alt="Grounded Vitality Living Room" >}}
 
 The mindset driving 2026 is marked by polarization. On one hand, there is a deep need for **Grounded Vitality** — a desire for stability and connection to the earth. This manifests in **Pet-Friendly** interiors that offer a sense of geological permanence through heavy materials, earthy tones, and tactile textures.
 
@@ -28,13 +28,13 @@ On the other hand, we see a surge in **Digital Optimism**. This trend embraces t
 
 ### 2. “Craft is a Verb”: The New Luxury
 
-{{< img src="/images/posts/1_phLQK4Bvv6CwisD6NYSFDA.png" alt="Craft is a Verb Trend" >}}
+{{< img-advanced src="images/1_phLQK4Bvv6CwisD6NYSFDA.png" alt="Craft is a Verb Trend" >}}
 
 A robust conceptual pillar for 2026 is **“Craft is a Verb”**. Luxury no longer resides solely in the finished object, but in the ethics of its creation. We are moving away from “fast furniture” toward surfaces that breathe and show the maker’s hand. Regenerative materials are no longer hidden; they are displayed as trophies of a new eco-consciousness.
 
 ### 3. Color Trends: Healing & Structure
 
-{{< img src="/images/posts/1_KXUjJUTabjBiqL_ik9Tg3w.png" alt="Transformative Teal Bedroom" >}}
+{{< img-advanced src="images/1_KXUjJUTabjBiqL_ik9Tg3w.png" alt="Transformative Teal Bedroom" >}}
 
 Color in 2026 abandons its purely decorative role to assume a therapeutic function. Palettes are designed to modulate emotions and anchor the nervous system.
 
@@ -44,7 +44,7 @@ Color in 2026 abandons its purely decorative role to assume a therapeutic functi
 
 ### 4. Living Materials Trend: Stone, Wood & The Tectonic Revolution
 
-{{< img src="/images/posts/1_UTw1-62ys7YmINnog4bmnw.png" alt="Living Materials Trend" >}}
+{{< img-advanced src="images/1_UTw1-62ys7YmINnog4bmnw.png" alt="Living Materials Trend" >}}
 
 Materiality in 2026 prioritizes the haptic experience. The flat, perfect surface is out; **biological complexity** and “honest materials” are in.
 
@@ -54,7 +54,7 @@ Materiality in 2026 prioritizes the haptic experience. The flat, perfect surface
 
 ### 5. Neuroarchitecture: The Healing Layout
 
-{{< img src="/images/posts/1_LuGuMKyBp3smEMUWQ-ioYw.png" alt="Neuroarchitecture Layout" >}}
+{{< img-advanced src="images/1_LuGuMKyBp3smEMUWQ-ioYw.png" alt="Neuroarchitecture Layout" >}}
 
 **Neuroarchitecture** — the application of neuroscience to design — is the governing discipline of 2026 layouts. The goal is the regulation of the inhabitant’s nervous system.
 
@@ -64,7 +64,7 @@ Materiality in 2026 prioritizes the haptic experience. The flat, perfect surface
 
 ### 6. Furniture Trends 2026: Maximalism & Fractal Shapes
 
-{{< img src="/images/posts/1_H6BbNrJ_LCVwLyaVXjI9Aw.png" alt="Fractal Furniture Design" >}}
+{{< img-advanced src="images/1_H6BbNrJ_LCVwLyaVXjI9Aw.png" alt="Fractal Furniture Design" >}}
 
 Furniture in 2026 rejects rigid modernism. The new formal language is sculptural, intentional, and inspired by nature.
 
@@ -74,7 +74,7 @@ Furniture in 2026 rejects rigid modernism. The new formal language is sculptural
 
 ### 7. Lighting Trends: Human-Centric & Sculptural Design
 
-{{< img src="/images/posts/1_0pz5VlltNNQchqo47wUJsw.png" alt="Sculptural Lighting" >}}
+{{< img-advanced src="images/1_0pz5VlltNNQchqo47wUJsw.png" alt="Sculptural Lighting" >}}
 
 Lighting is recognized as the most critical factor for well-being. The “Big Light” is abandoned in favor of atmospheric “pools of light.”
 
@@ -83,7 +83,7 @@ Lighting is recognized as the most critical factor for well-being. The “Big Li
 
 ### 8. Global Nuance: Japandi 2.0 & Tropical Modernism
 
-{{< img src="/images/posts/1_2il_mPpXuw0iruo6ZMDA1Q.png" alt="Japandi 2.0 Bedroom" >}}
+{{< img-advanced src="images/1_2il_mPpXuw0iruo6ZMDA1Q.png" alt="Japandi 2.0 Bedroom" >}}
 
 While trends are global, they manifest locally. In Asia, we see the evolution of **Japandi** (Japan + Scandi) into a darker, more technological version known as “Zen Tech,” integrating mindfulness with AI. In Latin America, **Tropical Modernism** reigns, prioritizing passive ventilation, native materials, and a deep integration with local flora.
 
@@ -91,7 +91,7 @@ While trends are global, they manifest locally. In Asia, we see the evolution of
 
 The home of 2026 is defined not by how it looks for social media, but by how it *feels*. It is a “Resonant Home” that vibrates with the emotional frequency of its inhabitants. By combining **Sustainable Living** principles with **Pet-Friendly** durability and high-end aesthetics, we are building spaces that serve as true ports of safety and vitality.
 
-{{< img src="/images/posts/1_rxzJM-q8ezD3vkFP2zc2ZQ.png" alt="Resonant Home Conclusion" >}}
+{{< img-advanced src="images/1_rxzJM-q8ezD3vkFP2zc2ZQ.png" alt="Resonant Home Conclusion" >}}
 
 **Inspired by the Resonant Home? Save this article to your “2026 Design Inspiration” board on Pinterest to keep these trends handy for your next renovation.**
 

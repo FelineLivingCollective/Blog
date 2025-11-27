@@ -1,0 +1,28 @@
+<div style="background:#e2e3e5; padding:20px; border:2px solid #333; margin:20px 0;">
+    <h3>Hugo Resource Debugger</h3>
+    <p><strong>Current Page:</strong> {{ .Page.RelPermalink }}</p>
+    <p><strong>Bundle Type:</strong> {{ if .Page.BundleType }}{{ .Page.BundleType }}{{ else }}Branch (not a bundle?){{
+        end }}</p>
+
+    <h4>All Page Resources:</h4>
+    <ul>
+        {{ range .Page.Resources }}
+        <li>
+            <strong>Name:</strong> {{ .Name }}<br>
+            <strong>Title:</strong> {{ .Title }}<br>
+            <strong>ResourceType:</strong> {{ .ResourceType }}<br>
+            <strong>RelPermalink:</strong> {{ .RelPermalink }}<br>
+            <strong>Src (for GetMatch):</strong> {{ .Name }} (Try matching this!)
+        </li>
+        {{ else }}
+        <li><em>No resources found for this page.</em></li>
+        {{ end }}
+    </ul>
+
+    <h4>Match Attempt:</h4>
+    {{ $testSrc := "images/1_PsUxP5XuA2GTZDRRbh5lmA.png" }}
+    <p>Matching "{{ $testSrc }}":
+        {{ $match := .Page.Resources.GetMatch $testSrc }}
+        {{ if $match }}<span style="color:green">FOUND</span>{{ else }}<span style="color:red">NOT FOUND</span>{{ end }}
+    </p>
+</div>

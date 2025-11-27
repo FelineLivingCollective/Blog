@@ -14,3 +14,29 @@ markup:
   goldmark:
     renderer:
       unsafe: true  # Permite HTML em Markdown
+
+# Hugo Image Processing Configuration
+imaging:
+  # Default quality for image processing
+  quality: 85
+  
+  # Resample filter for best quality
+  # Options: Box, NearestNeighbor, Linear, Lanczos (best quality)
+  resampleFilter: "Lanczos"
+  
+  # Anchor for cropping (Smart uses AI to detect focus point)
+  anchor: "Smart"
+  
+  # EXIF settings
+  exif:
+    disableDate: false
+    disableLatLong: true
+    includeFields: ""
+    excludeFields: ""
+
+# Sitemap Configuration
+sitemap:
+  changefreq: "weekly"
+  filename: "sitemap.xml"
+  priority: 0.5
+

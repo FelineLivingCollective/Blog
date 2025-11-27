@@ -1,0 +1,67 @@
+{{- /*
+Advanced Image Shortcode with Hugo Native Processing + ImageKit CDN Fallback
+*/ -}}
+
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" -}}
+{{- $class := .Get "class" -}}
+
+{{/* 1. Try exact match */}}
+{{- $img := .Page.Resources.GetMatch $src -}}
+
+{{/* 2. If not found, try finding by filename (in case of path issues) */}}
+{{- if not $img -}}
+{{- $filename := path.Base $src -}}
+{{- $img = .Page.Resources.GetMatch (printf "**/%s" $filename) -}}
+{{- end -}}
+
+{{/* 3. If still not found, try stripping 'images/' prefix if present */}}
+{{- if not $img -}}
+{{- $cleanSrc := replace $src "images/" "" -}}
+{{- $img = .Page.Resources.GetMatch $cleanSrc -}}
+{{- end -}}
+
+{{- if $img -}}
+{{/* ========================================
+HUGO NATIVE PROCESSING (If image found)
+======================================== */}}
+{{- $small := $img.Resize "400x webp q85" -}}
+{{- $medium := $img.Resize "800x webp q85" -}}
+{{- $large := $img.Resize "1200x webp q85" -}}
+{{- $fallback := $img.Resize "800x jpg q85" -}}
+
+<picture>
+    <source type="image/webp"
+        srcset="{{ $small.RelPermalink }} 400w, {{ $medium.RelPermalink }} 800w, {{ $large.RelPermalink }} 1200w"
+        sizes="(max-width: 600px) 400px, (max-width: 1000px) 800px, 1200px">
+    <img src="{{ $fallback.RelPermalink }}" alt="{{ $alt }}" {{ with $class }}class="{{ . }}" {{ end }}
+        width="{{ $medium.Width }}" height="{{ $medium.Height }}" loading="lazy" decoding="async">
+</picture>
+
+{{- else -}}
+{{/* ========================================
+FALLBACK (If image NOT found as resource)
+======================================== */}}
+
+{{/* Check if it's an ImageKit URL or external */}}
+{{- $ik := .Site.Params.imagekit_url -}}
+{{- $width := .Get "width" | default "800" -}}
+{{- $finalSrc := $src -}}
+
+{{/* Smart Local Fallback: If it's a local file but not found as resource, assume static/images */}}
+{{- if not (or (hasPrefix $src "http") (hasPrefix $src "/")) -}}
+{{/* Strip 'images/' if present to avoid duplication */}}
+{{- $cleanName := replace $src "images/" "" -}}
+{{/* Construct path pointing to static/images */}}
+{{- $finalSrc = printf "/images/%s" $cleanName -}}
+{{- end -}}
+
+{{- if and $ik (hasPrefix $finalSrc "/") -}}
+{{/* It's a local path starting with /, use ImageKit */}}
+{{- $finalSrc = printf "%s%s?tr=w-%s,f-auto" $ik $finalSrc $width -}}
+{{- end -}}
+
+<img src="{{ $finalSrc }}" alt="{{ $alt }}" {{ with $class }}class="{{ . }}" {{ end }} width="{{ $width }}"
+    loading="lazy" decoding="async">
+
+{{- end -}}

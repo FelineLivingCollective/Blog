@@ -4,6 +4,10 @@
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
+  <!-- Security Meta Tags -->
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
   <!-- Meta Description -->
   <meta name="description"
     content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">

@@ -5,6 +5,31 @@
         <time datetime="{{ .Date.Format " 2006-01-02" }}">
             {{ .Date.Format "January 2, 2006" }}
         </time>
+
+        {{/* Cover Image Logic */}}
+        {{ with .Params.image }}
+        <div class="article-cover">
+            {{ $src := . }}
+            {{ $img := $.Page.Resources.GetMatch $src }}
+
+            {{/* Fallback: Try finding by filename if exact match fails */}}
+            {{ if not $img }}
+            {{ $filename := path.Base $src }}
+            {{ $img = $.Page.Resources.GetMatch (printf "**/%s" $filename) }}
+            {{ end }}
+
+            {{ if $img }}
+            {{ $medium := $img.Resize "800x webp q85" }}
+            {{ $fallback := $img.Resize "800x jpg q85" }}
+            <img src="{{ $fallback.RelPermalink }}" alt="Cover Image for {{ $.Title }}" width="{{ $medium.Width }}"
+                height="{{ $medium.Height }}" style="width:100%; height:auto; border-radius:8px; margin-top:1rem;">
+            {{ else }}
+            {{/* Fallback for external images */}}
+            <img src="{{ $src }}" alt="Cover Image for {{ $.Title }}"
+                style="width:100%; height:auto; border-radius:8px; margin-top:1rem;">
+            {{ end }}
+        </div>
+        {{ end }}
     </header>
 
     <div class="article-content">
@@ -17,12 +42,11 @@
             Collective</a>
     </div>
 
-    <!-- Email Signup (Placeholder) -->
+    <!-- Email Signup -->
     <div class="email-signup"
         style="background: var(--neutral); padding: 2rem; border-radius: var(--border-radius); margin: 2rem 0;">
         <h3>Get Design Inspiration in Your Inbox</h3>
         <p>Join our community for exclusive cat-friendly design tips and 2026 trends.</p>
-        <!-- TODO: Integrar com Mailchimp -->
         <form action="#" method="post" style="display: flex; gap: 1rem; margin-top: 1rem;">
             <input type="email" placeholder="your@email.com" required
                 style="flex: 1; padding: 0.75rem; border: 1px solid var(--neutral); border-radius: var(--border-radius);">

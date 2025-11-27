@@ -21,3 +21,14 @@ CREDENTIALS.txt
 # Node (se usar)
 node_modules/
 package-lock.json
+
+# Local Binaries & Debug
+hugo.exe
+hugo-extended.zip
+debug_*.html
+hugo-error.log
+*.log
+
+# Temporary Folders
+medium-temp/
+medium-export/

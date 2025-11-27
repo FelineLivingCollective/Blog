@@ -5,7 +5,13 @@
     {{ range first 1 .Site.RegularPages }}
     <section class="hero-section reveal">
         <a href="{{ .Permalink }}" class="hero-link">
-            {{ if .Params.image }}
+            {{ $img := .Resources.GetMatch .Params.image }}
+            {{ if not $img }}{{ $img = .Resources.GetMatch "images/cover.png" }}{{ end }}
+            {{ if not $img }}{{ $img = .Resources.GetMatch "images/hero.png" }}{{ end }}
+
+            {{ if $img }}
+            <img src="{{ $img.RelPermalink }}" alt="{{ .Title }}" class="hero-image">
+            {{ else if .Params.image }}
             <img src="{{ .Params.image }}" alt="{{ .Title }}" class="hero-image">
             {{ end }}
             <div class="hero-overlay">
@@ -24,9 +30,13 @@
     <section class="posts-grid">
         {{ range after 1 .Site.RegularPages }}
         <article class="post-card reveal">
-            {{ if .Params.image }}
+            {{ $img := .Resources.GetMatch .Params.image }}
+            {{ if not $img }}{{ $img = .Resources.GetMatch "images/cover.png" }}{{ end }}
+            {{ if not $img }}{{ $img = .Resources.GetMatch "images/hero.png" }}{{ end }}
+
+            {{ if or $img .Params.image }}
             <a href="{{ .Permalink }}">
-                <img src="{{ .Params.image }}" alt="{{ .Title }}">
+                <img src="{{ with $img }}{{ .RelPermalink }}{{ else }}{{ .Params.image }}{{ end }}" alt="{{ .Title }}">
             </a>
             {{ end }}
 
